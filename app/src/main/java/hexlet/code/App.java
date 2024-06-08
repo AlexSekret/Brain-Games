@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 //Файл App.java предназначен только для отображения игрового меню, выбора и запуска нужной игры
 public class App {
+    private final int roundCount = 3;
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -31,6 +32,7 @@ public class App {
                 break;
         }
     }
+
     public static void greet(Scanner sc) {
         System.out.println("Welcome to the Brain Games!\nMay I have your name?");
         String userName = sc.next();
