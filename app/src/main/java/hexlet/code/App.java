@@ -1,5 +1,7 @@
 package hexlet.code;
 
+import hexlet.code.games.EvenOddGame;
+
 import java.util.Scanner;
 
 //Файл App.java предназначен только для отображения игрового меню, выбора и запуска нужной игры
