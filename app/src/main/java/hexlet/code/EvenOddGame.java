@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class EvenOddGame {
     private static String userName;
-    private static int number;
     private static int wrongCount = 0;
 
     public static void play() {
@@ -25,7 +24,7 @@ public class EvenOddGame {
 
     private static void doCycle(int questionsCount, Scanner sc) {
         for (int i = 0; i < questionsCount; i++) {
-            number = getRandomNumber();
+            int number = getRandomNumber();
             String correctAnswer = getCorrectAnswer(number);
             System.out.println("Question: " + number);
             String answer = sc.next();
