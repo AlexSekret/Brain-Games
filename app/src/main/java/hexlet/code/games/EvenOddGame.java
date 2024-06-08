@@ -1,5 +1,7 @@
 package hexlet.code.games;
 
+import hexlet.code.App;
+
 import java.util.Scanner;
 
 public class EvenOddGame {
@@ -9,14 +11,14 @@ public class EvenOddGame {
     public static void play() {
         Scanner sc = new Scanner(System.in);
         int questionsCount = 3;
-        greet(sc);
-        doCycle(questionsCount, sc);
-        processingResult();
+        EvenOddGame.greet();
+        EvenOddGame.doCycle(questionsCount, sc);
+        EvenOddGame.processingResult();
     }
 
     private static void processingResult() {
         if (wrongCount == 0) {
-            System.out.println("Congratulations, " + userName);
+            System.out.println("Congratulations, " + App.userName);
         } else {
             System.out.println("You lose! Try again!");
         }
@@ -32,11 +34,10 @@ public class EvenOddGame {
         }
     }
 
-    private static void greet(Scanner sc) {
-        System.out.println("Welcome to the Brain Games!\nMay I have your name?");
-        userName = sc.next();
-        System.out.println("Hello, " + userName + "\nAnswer 'yes' if the number is even, otherwise answer 'no'.");
+    private static void greet() {
+        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
     }
+
 
     private static void processUserAnswer(String answer, String correct) {
         if (answer.equals(correct)) {
