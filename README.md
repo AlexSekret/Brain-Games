@@ -5,12 +5,6 @@
 
 ### start Even game
 
-<https://asciinema.org/connect/31668490-970e-4f8f-b1ba-3647c5493f6b>
-
 ### lose Even game
 
-<https://asciinema.org/connect/31668490-970e-4f8f-b1ba-3647c5493f6b>
-
 ### win Even game
-
-<https://asciinema.org/connect/31668490-970e-4f8f-b1ba-3647c5493f6b>
