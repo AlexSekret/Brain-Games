@@ -42,7 +42,8 @@ public class EvenOddGame {
         if (answer.equals(correct)) {
             System.out.println("Your answer: " + answer + "\nCorrect!");
         } else {
-            System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was" + " '" + correct + "'.\nLet's try again, " + userName);
+            System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was" + " '"
+                    + correct + "'.\nLet's try again, " + userName);
             wrongCount++;
         }
     }
