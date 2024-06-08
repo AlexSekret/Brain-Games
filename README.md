@@ -5,6 +5,12 @@
 
 ### start Even game
 
+[![asciicast](https://asciinema.org/a/gFxC1zGQWysMDo2rP1ThsHy2z.svg)](https://asciinema.org/a/gFxC1zGQWysMDo2rP1ThsHy2z)
+
 ### lose Even game
 
+[![asciicast](https://asciinema.org/a/ZrmTczx9leTh0VJ7WyPWjLGs5.svg)](https://asciinema.org/a/ZrmTczx9leTh0VJ7WyPWjLGs5)
+
 ### win Even game
+
+[![asciicast](https://asciinema.org/a/EAUdr1EEiUZ3YbPj0cBKM82nn.svg)](https://asciinema.org/a/EAUdr1EEiUZ3YbPj0cBKM82nn)
