@@ -30,6 +30,7 @@ public class App {
                 EvenOddGame.play();
                 break;
             case "3":
+//                Engine.initialize(game);
                 System.out.println("Nothing happen yet");
                 System.out.println("Question: " + Calculator.generateQuestion());
                 System.out.println("Answer: " + Calculator.generateAnswer(Calculator.numbers, Calculator.operator));
