@@ -1,12 +1,14 @@
 package hexlet.code;
 
+import hexlet.code.games.Calculator;
 import hexlet.code.games.EvenOddGame;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 //Файл App.java предназначен только для отображения игрового меню, выбора и запуска нужной игры
 public class App {
-    private final int roundCount = 3;
+    private final int maxRoundCount = 3;
     public static String userName;
 
     public static void main(String[] args) {
@@ -29,6 +31,8 @@ public class App {
                 break;
             case "3":
                 System.out.println("Nothing happen yet");
+                System.out.println("Question: " + Calculator.generateQuestion());
+                System.out.println("Answer: " + Calculator.generateAnswer(Calculator.numbers, Calculator.operator));
                 break;
             default:
                 break;
