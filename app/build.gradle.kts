@@ -22,7 +22,7 @@ application {
 
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.11.0-M2"))
-    testImplementation("org.junit.jupiter:junit-jupiter:5.10.2")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.11.0-M2")
 }
 tasks.test {
     useJUnitPlatform()

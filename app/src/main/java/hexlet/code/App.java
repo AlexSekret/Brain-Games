@@ -1,7 +1,5 @@
 package hexlet.code;
 
-import hexlet.code.games.EvenOddGame;
-
 //Файл App.java предназначен только для отображения игрового меню, выбора и запуска нужной игры
 public class App {
     public static final int MAX_ROUND_COUNT = 3;
