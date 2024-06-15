@@ -14,3 +14,11 @@
 ### win Even game
 
 [![asciicast](https://asciinema.org/a/EAUdr1EEiUZ3YbPj0cBKM82nn.svg)](https://asciinema.org/a/EAUdr1EEiUZ3YbPj0cBKM82nn)
+
+### lose Calculator game
+
+[![asciicast](https://asciinema.org/a/4y82d4qQtRzgKPFjHlOit7f0h.svg)](https://asciinema.org/a/4y82d4qQtRzgKPFjHlOit7f0h)
+
+### win Calculator game
+
+[![asciicast](https://asciinema.org/a/HZmZbvkBDOwNHd5COPhpNKKzd.svg)](https://asciinema.org/a/HZmZbvkBDOwNHd5COPhpNKKzd)
