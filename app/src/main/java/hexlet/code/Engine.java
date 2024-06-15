@@ -128,4 +128,27 @@ public class Engine {
     private static void printEvenOddQuestion() {
         System.out.println("Question: " + EvenOddGame.getQuestion());
     }
+
+    public static void playGcd(int roundCount) {
+        startGreeting();
+        printGcdGreetings();
+        for (int i = 0; i < roundCount; i++) {
+            printGcdQuestion();
+            printAnswer();
+            printGcdResult();
+        }
+        printWinLoose();
+    }
+
+    private static void printGcdResult() {
+
+    }
+
+    private static void printGcdQuestion() {
+
+    }
+
+    private static void printGcdGreetings() {
+
+    }
 }
