@@ -4,7 +4,7 @@ public class Calculator {
     private static final String[] OP_LIST = new String[]{"+", "-", "*"};
     private static String operator = "";
     private static int[] numbers = {0, 0};
-    private static final int MAX_RAND_BOUND = 101;
+    private static final int MAX_RAND_BOUND = 21;
 
 
     public static int getAnswer() {
