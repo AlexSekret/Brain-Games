@@ -1,58 +1,23 @@
 package hexlet.code.games;
 
-import hexlet.code.App;
-
-import java.util.Scanner;
-
 public class EvenOddGame {
-    private static String userName;
-    private static int wrongCount = 0;
-    private static final int QUESTIONS_COUNT = App.MAX_ROUND_COUNT;
+    private static int number;
+    private static final int MAX_NUMBER_BOUND = 100;
 
-    public static void play() {
-        Scanner sc = new Scanner(System.in);
-        EvenOddGame.doCycle(QUESTIONS_COUNT, sc);
-        EvenOddGame.processingResult();
+    public static int getQuestion() {
+        generateQuestion();
+        return number;
     }
 
-    private static void processingResult() {
-        if (wrongCount == 0) {
-            System.out.println("Congratulations, " + App.userName);
-        } else {
-            System.out.println("You lose! Try again!");
-        }
+    public static String getAnswer() {
+        return generateCorrectAnswer();
     }
 
-    private static void doCycle(int questionsCount, Scanner sc) {
-        for (int i = 0; i < questionsCount; i++) {
-            int number = getRandomNumber();
-            String correctAnswer = getCorrectAnswer(number);
-            System.out.println("Question: " + number);
-            String answer = sc.next();
-            processUserAnswer(answer, correctAnswer);
-        }
+    private static void generateQuestion() {
+        number = (int) (1 + Math.random() * MAX_NUMBER_BOUND);
     }
 
-    private static void greet() {
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-    }
-
-
-    private static void processUserAnswer(String answer, String correct) {
-        if (answer.equals(correct)) {
-            System.out.println("Your answer: " + answer + "\nCorrect!");
-        } else {
-            System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was" + " '"
-                    + correct + "'.\nLet's try again, " + userName);
-            wrongCount++;
-        }
-    }
-
-    private static int getRandomNumber() {
-        return (int) (1 + Math.random() * 10);
-    }
-
-    private static String getCorrectAnswer(int number) {
+    private static String generateCorrectAnswer() {
         String result = "no";
         if (number % 2 == 0) {
             result = "yes";

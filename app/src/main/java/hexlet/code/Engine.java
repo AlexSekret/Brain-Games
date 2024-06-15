@@ -1,6 +1,7 @@
 package hexlet.code;
 
 import hexlet.code.games.Calculator;
+import hexlet.code.games.EvenOddGame;
 
 import java.util.Scanner;
 
@@ -9,7 +10,7 @@ public class Engine {
     static Scanner sc = new Scanner(System.in);
     private static String userName = "";
     static String userChoice = "";
-    private static int userAnswer;
+    private static String userAnswer;
     private static int correctAnswer;
     private static int counterCorrectAnswers;
 
@@ -49,21 +50,20 @@ public class Engine {
     }
 
     private static void printCalculatorQuestion() {
-        System.out.println(Calculator.getQuestion());
+        System.out.println("Question: " + Calculator.getQuestion());
     }
 
     private static void printAnswer() {
-        userAnswer = Integer.parseInt(sc.next());
+        userAnswer = sc.next();
         System.out.println("Answer: " + userAnswer);
     }
 
-    private static void getCalculatorCorrectAnswer() {
-        correctAnswer = Calculator.getAnswer();
+    private static int getCalculatorCorrectAnswer() {
+        return Calculator.getAnswer();
     }
 
     private static boolean checkCalculatorCorrectAnswer() {
-        getCalculatorCorrectAnswer();
-        return userAnswer == correctAnswer;
+        return Integer.parseInt(userAnswer) == getCalculatorCorrectAnswer();
     }
 
     private static void printCalculatorResult() {
@@ -94,5 +94,38 @@ public class Engine {
         } else {
             System.out.println("Sorry! You loose. Try again.");
         }
+    }
+
+    public static void playEvenOdd(int roundCount) {
+        startGreeting();
+        printEvenOddGreetings();
+        for (int i = 0; i < roundCount; i++) {
+            printEvenOddQuestion();
+            printAnswer();
+            printEvenOddResult();
+        }
+        printWinLoose();
+    }
+
+    private static void printEvenOddResult() {
+        if (checkEvenOddAnswer()) {
+            System.out.println("Correct!");
+            counterCorrectAnswers++;
+        } else {
+            System.out.println(userAnswer + " is wrong answer ;(. Correct answer was "
+                    + correctAnswer + ".\nLet's try again, " + userName);
+        }
+    }
+
+    private static boolean checkEvenOddAnswer() {
+        return userAnswer.equals(getEvenOddCorrectAnswer());
+    }
+
+    private static String getEvenOddCorrectAnswer() {
+        return EvenOddGame.getAnswer();
+    }
+
+    private static void printEvenOddQuestion() {
+        System.out.println("Question: " + EvenOddGame.getQuestion());
     }
 }

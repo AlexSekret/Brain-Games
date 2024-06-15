@@ -21,9 +21,7 @@ public class App {
                 Engine.startGreeting();
                 break;
             case "2":
-                Engine.startGreeting();
-                Engine.printEvenOddGreetings();
-                EvenOddGame.play();
+                Engine.playEvenOdd(MAX_ROUND_COUNT);
                 break;
             case "3":
                 Engine.playCalculator(MAX_ROUND_COUNT);
