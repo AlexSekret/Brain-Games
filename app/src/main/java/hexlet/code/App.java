@@ -19,7 +19,6 @@ public class App {
         switch (Engine.userChoice) {
             case "1":
                 Engine.startGreeting();
-//                Engine.setUserName();
                 break;
             case "2":
                 Engine.startGreeting();

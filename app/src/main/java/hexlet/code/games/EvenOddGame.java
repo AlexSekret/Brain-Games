@@ -11,7 +11,6 @@ public class EvenOddGame {
 
     public static void play() {
         Scanner sc = new Scanner(System.in);
-//        EvenOddGame.greet();
         EvenOddGame.doCycle(QUESTIONS_COUNT, sc);
         EvenOddGame.processingResult();
     }
