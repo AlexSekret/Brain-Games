@@ -8,9 +8,10 @@ public class EvenOddGame {
     private static String userName;
     private static int wrongCount = 0;
     private static final int QUESTIONS_COUNT = App.MAX_ROUND_COUNT;
+
     public static void play() {
         Scanner sc = new Scanner(System.in);
-        EvenOddGame.greet();
+//        EvenOddGame.greet();
         EvenOddGame.doCycle(QUESTIONS_COUNT, sc);
         EvenOddGame.processingResult();
     }
@@ -49,7 +50,7 @@ public class EvenOddGame {
     }
 
     private static int getRandomNumber() {
-        return (int) (Math.random() * 10);
+        return (int) (1 + Math.random() * 10);
     }
 
     private static String getCorrectAnswer(int number) {

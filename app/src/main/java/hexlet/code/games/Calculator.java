@@ -35,12 +35,12 @@ public class Calculator {
         }
     }
 
-    public static String getRandomOperator() {
+    private static String getRandomOperator() {
         int rnd = (int) (Math.random() * 3);
         return OP_LIST[rnd];
     }
 
-    public static int[] getRandomNumbers() {
+    private static int[] getRandomNumbers() {
         for (int i = 0; i < numbers.length; i++) {
             numbers[i] = (int) (Math.random() * MAX_RAND_BOUND);
         }

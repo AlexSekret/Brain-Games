@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Engine {
 
     static Scanner sc = new Scanner(System.in);
-    static String userName = "";
+    private static String userName = "";
     static String userChoice = "";
     private static int userAnswer;
     private static int correctAnswer;
@@ -22,7 +22,13 @@ public class Engine {
         System.out.println("Your choice: " + userChoice);
     }
 
-    public static void defaultGreet() {
+    public static void startGreeting() {
+        defaultGreet();
+        setUserName();
+        System.out.println("Hello, " + userName);
+    }
+
+    private static void defaultGreet() {
         if (!userChoice.equals("0")) {
             System.out.println("""
                     Welcome to the Brain Games!
@@ -30,12 +36,16 @@ public class Engine {
         }
     }
 
-    public static void setUserName() {
+    private static void setUserName() {
         userName = sc.next();
     }
 
-    public static void printCalculatorGreetings() {
-        System.out.println("Hello, " + userName + "\nWhat is the result of the expression?");
+    private static void printCalculatorGreetings() {
+        System.out.println("What is the result of the expression?");
+    }
+
+    public static void printEvenOddGreetings() {
+        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
     }
 
     private static void printCalculatorQuestion() {
@@ -61,20 +71,24 @@ public class Engine {
             System.out.println("Correct!");
             counterCorrectAnswers++;
         } else {
-            System.out.println(userAnswer + " is wrong answer ;(. Correct answer was " + correctAnswer + ".\nLet's try again, " + userName);
+            System.out.println(userAnswer + " is wrong answer ;(. Correct answer was "
+                    + correctAnswer + ".\nLet's try again, " + userName);
         }
 
     }
 
     public static void playCalculator(int roundCount) {
+        defaultGreet();
+        printCalculatorGreetings();
         for (int i = 0; i < roundCount; i++) {
             printCalculatorQuestion();
             printAnswer();
             printCalculatorResult();
         }
+        printWinLoose();
     }
 
-    public static void printWinLoose() {
+    private static void printWinLoose() {
         if (counterCorrectAnswers == 3) {
             System.out.println("Congratulations, " + userName);
         } else {
