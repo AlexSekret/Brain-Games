@@ -78,7 +78,7 @@ public class Engine {
     }
 
     public static void playCalculator(int roundCount) {
-        defaultGreet();
+        startGreeting();
         printCalculatorGreetings();
         for (int i = 0; i < roundCount; i++) {
             printCalculatorQuestion();
