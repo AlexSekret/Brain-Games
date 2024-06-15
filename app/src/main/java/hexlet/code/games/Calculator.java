@@ -1,18 +1,25 @@
 package hexlet.code.games;
 
 public class Calculator {
-    public static String[] opList = new String[]{"+", "-", "*"};
-    public static String operator;
-    public static int[] numbers = new int[2];
+    private static final String[] OP_LIST = new String[]{"+", "-", "*"};
+    private static String operator = "";
+    private static int[] numbers = {0, 0};
+    private static final int MAX_RAND_BOUND = 101;
 
 
-    public static String generateQuestion() {
+    public static int getAnswer() {
+        return generateAnswer();
+    }
+    public static String getQuestion() {
+        return generateQuestion();
+    }
+
+    private static String generateQuestion() {
         operator = Calculator.getRandomOperator();
         numbers = Calculator.getRandomNumbers();
         return numbers[0] + " " + operator + " " + numbers[1];
     }
-
-    public static int generateAnswer(int[] numbers, String operator) {
+    private static int generateAnswer() {
         System.out.println(numbers[0] + " " + operator + " " + numbers[1]);
         switch (operator) {
             case "+":
@@ -28,12 +35,12 @@ public class Calculator {
 
     public static String getRandomOperator() {
         int rnd = (int) (Math.random() * 3);
-        return opList[rnd];
+        return OP_LIST[rnd];
     }
 
     public static int[] getRandomNumbers() {
         for (int i = 0; i < numbers.length; i++) {
-            numbers[i] = (int) (Math.random() * 101);
+            numbers[i] = (int) (Math.random() * MAX_RAND_BOUND);
         }
         return numbers;
     }
