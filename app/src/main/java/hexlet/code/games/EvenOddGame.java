@@ -7,12 +7,11 @@ import java.util.Scanner;
 public class EvenOddGame {
     private static String userName;
     private static int wrongCount = 0;
-
+    private static final int QUESTIONS_COUNT = App.MAX_ROUND_COUNT;
     public static void play() {
         Scanner sc = new Scanner(System.in);
-        int questionsCount = 3;
         EvenOddGame.greet();
-        EvenOddGame.doCycle(questionsCount, sc);
+        EvenOddGame.doCycle(QUESTIONS_COUNT, sc);
         EvenOddGame.processingResult();
     }
 

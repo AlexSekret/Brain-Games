@@ -10,6 +10,7 @@ public class Calculator {
     public static int getAnswer() {
         return generateAnswer();
     }
+
     public static String getQuestion() {
         return generateQuestion();
     }
@@ -19,6 +20,7 @@ public class Calculator {
         numbers = Calculator.getRandomNumbers();
         return numbers[0] + " " + operator + " " + numbers[1];
     }
+
     private static int generateAnswer() {
         System.out.println(numbers[0] + " " + operator + " " + numbers[1]);
         switch (operator) {
