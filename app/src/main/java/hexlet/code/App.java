@@ -34,8 +34,8 @@ public class App {
             case "3":
                 Engine.defaultGreet();
                 Engine.setUserName();
-                Engine.printCalculatorQuestion();
-                Engine.printAnswer();
+                Engine.playCalculator(MAX_ROUND_COUNT);
+                Engine.printWinLoose();
                 break;
             default:
                 break;

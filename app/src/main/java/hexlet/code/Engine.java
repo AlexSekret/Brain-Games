@@ -1,7 +1,6 @@
 package hexlet.code;
 
 import hexlet.code.games.Calculator;
-import hexlet.code.games.EvenOddGame;
 
 import java.util.Scanner;
 
@@ -10,7 +9,9 @@ public class Engine {
     static Scanner sc = new Scanner(System.in);
     static String userName = "";
     static String userChoice = "";
-    private static int answer;
+    private static int userAnswer;
+    private static int correctAnswer;
+    private static int counterCorrectAnswers;
 
     public static void getUserChoice() {
         userChoice = sc.next();
@@ -39,11 +40,42 @@ public class Engine {
     }
 
     public static void printAnswer() {
-        answer = Integer.parseInt(sc.next());
-        System.out.println("Answer: " + answer);
+        userAnswer = Integer.parseInt(sc.next());
+        System.out.println("Answer: " + userAnswer);
     }
 
     public static void getCalculatorCorrectAnswer() {
-        answer = Calculator.getAnswer();
+        correctAnswer = Calculator.getAnswer();
+    }
+
+    private static boolean checkCalculatorCorrectAnswer() {
+        getCalculatorCorrectAnswer();
+        return userAnswer == correctAnswer;
+    }
+
+    public static void printCalculatorResult() {
+        if (checkCalculatorCorrectAnswer()) {
+            System.out.println("Correct!");
+            counterCorrectAnswers++;
+        } else {
+            System.out.println(userAnswer + " is wrong answer ;(. Correct answer was " + correctAnswer + ".\nLet's try again, " + userName);
+        }
+
+    }
+
+    public static void playCalculator(int roundCount) {
+        for (int i = 0; i < roundCount; i++) {
+            printCalculatorQuestion();
+            printAnswer();
+            printCalculatorResult();
+        }
+    }
+
+    public static void printWinLoose() {
+        if (counterCorrectAnswers == 3) {
+            System.out.println("Congratulations, " + userName);
+        } else {
+            System.out.println("Sorry! You loose. Try again.");
+        }
     }
 }
