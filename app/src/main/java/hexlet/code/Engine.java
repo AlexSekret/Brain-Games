@@ -18,7 +18,7 @@ public class Engine {
         printUserChoice();
     }
 
-    public static void printUserChoice() {
+    private static void printUserChoice() {
         System.out.println("Your choice: " + userChoice);
     }
 
@@ -35,16 +35,16 @@ public class Engine {
         System.out.println("Hello, " + userName);
     }
 
-    public static void printCalculatorQuestion() {
+    private static void printCalculatorQuestion() {
         System.out.println(Calculator.getQuestion());
     }
 
-    public static void printAnswer() {
+    private static void printAnswer() {
         userAnswer = Integer.parseInt(sc.next());
         System.out.println("Answer: " + userAnswer);
     }
 
-    public static void getCalculatorCorrectAnswer() {
+    private static void getCalculatorCorrectAnswer() {
         correctAnswer = Calculator.getAnswer();
     }
 
@@ -53,7 +53,7 @@ public class Engine {
         return userAnswer == correctAnswer;
     }
 
-    public static void printCalculatorResult() {
+    private static void printCalculatorResult() {
         if (checkCalculatorCorrectAnswer()) {
             System.out.println("Correct!");
             counterCorrectAnswers++;
