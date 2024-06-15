@@ -11,6 +11,7 @@ public class App {
                 1 - Greet
                 2 - Even
                 3 - Calc
+                4 - GCD
                 0 - Exit""");
 
         Engine.getUserChoice();
@@ -24,6 +25,8 @@ public class App {
             case "3":
                 Engine.playCalculator(MAX_ROUND_COUNT);
                 break;
+            case "4":
+                Engine.playGcd(MAX_ROUND_COUNT);
             default:
                 break;
         }
