@@ -29,11 +29,13 @@ public class App {
             case "2":
                 Engine.defaultGreet();
                 Engine.setUserName();
+
                 EvenOddGame.play();
                 break;
             case "3":
                 Engine.defaultGreet();
                 Engine.setUserName();
+                Engine.printCalculatorGreetings();
                 Engine.playCalculator(MAX_ROUND_COUNT);
                 Engine.printWinLoose();
                 break;

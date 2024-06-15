@@ -32,7 +32,10 @@ public class Engine {
 
     public static void setUserName() {
         userName = sc.next();
-        System.out.println("Hello, " + userName);
+    }
+
+    public static void printCalculatorGreetings() {
+        System.out.println("Hello, " + userName + "\nWhat is the result of the expression?");
     }
 
     private static void printCalculatorQuestion() {
