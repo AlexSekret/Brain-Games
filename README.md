@@ -38,3 +38,11 @@
 ### win Arithmetic progression game
 
 [![asciicast](https://asciinema.org/a/KwIzbBkbhQNI3dhQ638aW8inY.svg)](https://asciinema.org/a/KwIzbBkbhQNI3dhQ638aW8inY)
+
+### lose Prime number game
+
+[![asciicast](https://asciinema.org/a/FBpL0FbSaovP2UBL7zvsgLY1P.svg)](https://asciinema.org/a/FBpL0FbSaovP2UBL7zvsgLY1P)
+
+### win Prime number game
+
+[![asciicast](https://asciinema.org/a/bQHAzQEh0bAn72hOXIZQBNIX8.svg)](https://asciinema.org/a/bQHAzQEh0bAn72hOXIZQBNIX8)
