@@ -15,6 +15,7 @@ public class App {
                 3 - Calc
                 4 - GCD
                 5 - Progression
+                6 - Prime
                 0 - Exit""");
 
         Engine.getUserChoice();
@@ -34,6 +35,9 @@ public class App {
                 break;
             case "5":
                 Engine.playArithmeticProgression(MAX_ROUND_COUNT);
+                break;
+            case "6":
+                Engine.playPrime(MAX_ROUND_COUNT);
                 break;
             default:
                 break;
