@@ -221,7 +221,7 @@ public class Engine {
     }
 
     private static void printWrong() {
-        System.out.println(userAnswer + " is wrong answer ;(. Correct answer was " + correctAnswer + ".");
+        System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. Correct answer was '" + correctAnswer + "'.");
         System.out.println("Let's try again, " + userName + "!");
     }
 
