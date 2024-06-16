@@ -90,8 +90,6 @@ public class Engine {
     private static void printWinLoose() {
         if (counterCorrectAnswers == 3) {
             System.out.println("Congratulations, " + userName + "!");
-        } else {
-            System.out.println("Sorry! You loose. Try again.");
         }
     }
 
