@@ -7,8 +7,8 @@ public class Calculator {
     private static final int MAX_RAND_BOUND = 21;
 
 
-    public static int getAnswer() {
-        return generateAnswer();
+    public static String getAnswer() {
+        return String.valueOf(generateAnswer());
     }
 
     public static String getQuestion() {
