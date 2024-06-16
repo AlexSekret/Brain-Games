@@ -29,7 +29,7 @@ public class Engine {
     public static void startGreeting() {
         defaultGreet();
         setUserName();
-        System.out.println("Hello, " + userName);
+        System.out.println("Hello, " + userName + "!");
     }
 
     private static void defaultGreet() {
