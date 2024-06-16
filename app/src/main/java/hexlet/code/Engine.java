@@ -4,6 +4,8 @@ import hexlet.code.games.ArithmeticProgression;
 import hexlet.code.games.Calculator;
 import hexlet.code.games.EvenOddGame;
 import hexlet.code.games.Gcd;
+import hexlet.code.games.PrimeNumber;
+
 import java.util.Scanner;
 
 public class Engine {
@@ -190,5 +192,39 @@ public class Engine {
 
     private static void printAPGreetings() {
         System.out.println("What number is missing in the progression?");
+    }
+
+    public static void playPrime(int roundCount) {
+        startGreeting();
+        printPrimeGreetings();
+        for (int i = 0; i < roundCount; i++) {
+            printPrimeQuestion();
+            printAnswer();
+            printPrimeResult();
+        }
+        printWinLoose();
+    }
+
+    private static void printPrimeGreetings() {
+        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+    }
+
+    private static void printPrimeQuestion() {
+        System.out.println("Question: " + PrimeNumber.getQuestion());
+    }
+
+    private static void printPrimeResult() {
+        if (checkPrimeAnswer()) {
+            System.out.println("Correct!");
+            counterCorrectAnswers++;
+        } else {
+            System.out.println(userAnswer + " is wrong answer ;(. Correct answer was "
+                    + correctAnswer + ".\nLet's try again, " + userName);
+        }
+    }
+
+    private static boolean checkPrimeAnswer() {
+        correctAnswer = PrimeNumber.getAnswer();
+        return userAnswer.equals(correctAnswer);
     }
 }
