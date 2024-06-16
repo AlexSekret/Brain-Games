@@ -2,6 +2,7 @@ package hexlet.code;
 
 import hexlet.code.games.Calculator;
 import hexlet.code.games.EvenOddGame;
+import hexlet.code.games.Gcd;
 
 import java.util.Scanner;
 
@@ -55,7 +56,7 @@ public class Engine {
 
     private static void printAnswer() {
         userAnswer = sc.next();
-        System.out.println("Answer: " + userAnswer);
+        System.out.println("Your answer: " + userAnswer);
     }
 
     private static int getCalculatorCorrectAnswer() {
@@ -141,14 +142,24 @@ public class Engine {
     }
 
     private static void printGcdResult() {
+        if (checkGcdAnswer()) {
+            System.out.println("Correct!");
+            counterCorrectAnswers++;
+        } else {
+            System.out.println(userAnswer + " is wrong answer ;(. Correct answer was "
+                    + correctAnswer + ".\nLet's try again, " + userName);
+        }
+    }
 
+    private static boolean checkGcdAnswer() {
+        return Integer.parseInt(userAnswer) == Gcd.getAnswer();
     }
 
     private static void printGcdQuestion() {
-
+        System.out.println("Question: " + Gcd.getQuestion());
     }
 
     private static void printGcdGreetings() {
-
+        System.out.println("Find the greatest common divisor of given numbers.");
     }
 }
