@@ -15,7 +15,8 @@ public class Engine {
     static String userChoice = "";
     private static String userAnswer;
     private static String correctAnswer;
-    private static int counterCorrectAnswers;
+    private static int correctAnswersCounter;
+    private static int wrongAnswersCount = 0;
 
     public static void getUserChoice() {
         userChoice = sc.next();
@@ -68,9 +69,10 @@ public class Engine {
 
     private static void printCalculatorResult() {
         if (checkCalculatorCorrectAnswer()) {
+            correctAnswersCounter++;
             printCorrect();
-            counterCorrectAnswers++;
         } else {
+            wrongAnswersCount++;
             printWrong();
         }
 
@@ -80,15 +82,17 @@ public class Engine {
         startGreeting();
         printCalculatorGreetings();
         for (int i = 0; i < roundCount; i++) {
-            printCalculatorQuestion();
-            printAnswer();
-            printCalculatorResult();
+            if (wrongAnswersCount == 0) {
+                printCalculatorQuestion();
+                printAnswer();
+                printCalculatorResult();
+            }
         }
         printWinLoose();
     }
 
     private static void printWinLoose() {
-        if (counterCorrectAnswers == 3) {
+        if (correctAnswersCounter == 3) {
             System.out.println("Congratulations, " + userName + "!");
         }
     }
@@ -97,9 +101,11 @@ public class Engine {
         startGreeting();
         printEvenOddGreetings();
         for (int i = 0; i < roundCount; i++) {
-            printEvenOddQuestion();
-            printAnswer();
-            printEvenOddResult();
+            if (wrongAnswersCount == 0) {
+                printEvenOddQuestion();
+                printAnswer();
+                printEvenOddResult();
+            }
         }
         printWinLoose();
     }
@@ -107,8 +113,9 @@ public class Engine {
     private static void printEvenOddResult() {
         if (checkEvenOddAnswer()) {
             printCorrect();
-            counterCorrectAnswers++;
+            correctAnswersCounter++;
         } else {
+            wrongAnswersCount++;
             printWrong();
         }
     }
@@ -126,9 +133,11 @@ public class Engine {
         startGreeting();
         printGcdGreetings();
         for (int i = 0; i < roundCount; i++) {
-            printGcdQuestion();
-            printAnswer();
-            printGcdResult();
+            if (wrongAnswersCount == 0) {
+                printGcdQuestion();
+                printAnswer();
+                printGcdResult();
+            }
         }
         printWinLoose();
     }
@@ -136,8 +145,9 @@ public class Engine {
     private static void printGcdResult() {
         if (checkGcdAnswer()) {
             printCorrect();
-            counterCorrectAnswers++;
+            correctAnswersCounter++;
         } else {
+            wrongAnswersCount++;
             printWrong();
         }
     }
@@ -159,9 +169,11 @@ public class Engine {
         startGreeting();
         printAPGreetings();
         for (int i = 0; i < roundCount; i++) {
-            printAPQuestion();
-            printAnswer();
-            printAPResult();
+            if (wrongAnswersCount == 0) {
+                printAPQuestion();
+                printAnswer();
+                printAPResult();
+            }
         }
         printWinLoose();
     }
@@ -169,8 +181,9 @@ public class Engine {
     private static void printAPResult() {
         if (checkAPAnswer()) {
             printCorrect();
-            counterCorrectAnswers++;
+            correctAnswersCounter++;
         } else {
+            wrongAnswersCount++;
             printWrong();
         }
     }
@@ -192,9 +205,11 @@ public class Engine {
         startGreeting();
         printPrimeGreetings();
         for (int i = 0; i < roundCount; i++) {
-            printPrimeQuestion();
-            printAnswer();
-            printPrimeResult();
+            if (wrongAnswersCount == 0) {
+                printPrimeQuestion();
+                printAnswer();
+                printPrimeResult();
+            }
         }
         printWinLoose();
     }
@@ -210,8 +225,9 @@ public class Engine {
     private static void printPrimeResult() {
         if (checkPrimeAnswer()) {
             printCorrect();
-            counterCorrectAnswers++;
+            correctAnswersCounter++;
         } else {
+            wrongAnswersCount++;
             printWrong();
         }
     }
