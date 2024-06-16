@@ -1,9 +1,9 @@
 package hexlet.code;
 
+import hexlet.code.games.ArithmeticProgression;
 import hexlet.code.games.Calculator;
 import hexlet.code.games.EvenOddGame;
 import hexlet.code.games.Gcd;
-
 import java.util.Scanner;
 
 public class Engine {
@@ -12,7 +12,7 @@ public class Engine {
     private static String userName = "";
     static String userChoice = "";
     private static String userAnswer;
-    private static int correctAnswer;
+    private static String correctAnswer;
     private static int counterCorrectAnswers;
 
     public static void getUserChoice() {
@@ -59,12 +59,9 @@ public class Engine {
         System.out.println("Your answer: " + userAnswer);
     }
 
-    private static int getCalculatorCorrectAnswer() {
-        return Calculator.getAnswer();
-    }
-
     private static boolean checkCalculatorCorrectAnswer() {
-        return Integer.parseInt(userAnswer) == getCalculatorCorrectAnswer();
+        correctAnswer = Calculator.getAnswer();
+        return userAnswer.equals(correctAnswer);
     }
 
     private static void printCalculatorResult() {
@@ -119,11 +116,8 @@ public class Engine {
     }
 
     private static boolean checkEvenOddAnswer() {
-        return userAnswer.equals(getEvenOddCorrectAnswer());
-    }
-
-    private static String getEvenOddCorrectAnswer() {
-        return EvenOddGame.getAnswer();
+        correctAnswer = EvenOddGame.getAnswer();
+        return userAnswer.equals(correctAnswer);
     }
 
     private static void printEvenOddQuestion() {
@@ -152,7 +146,8 @@ public class Engine {
     }
 
     private static boolean checkGcdAnswer() {
-        return Integer.parseInt(userAnswer) == Gcd.getAnswer();
+        correctAnswer = Gcd.getAnswer();
+        return userAnswer.equals(correctAnswer);
     }
 
     private static void printGcdQuestion() {
@@ -161,5 +156,39 @@ public class Engine {
 
     private static void printGcdGreetings() {
         System.out.println("Find the greatest common divisor of given numbers.");
+    }
+
+    public static void playArithmeticProgression(int roundCount) {
+        startGreeting();
+        printAPGreetings();
+        for (int i = 0; i < roundCount; i++) {
+            printAPQuestion();
+            printAnswer();
+            printAPResult();
+        }
+        printWinLoose();
+    }
+
+    private static void printAPResult() {
+        if (checkAPAnswer()) {
+            System.out.println("Correct!");
+            counterCorrectAnswers++;
+        } else {
+            System.out.println(userAnswer + " is wrong answer ;(. Correct answer was "
+                    + correctAnswer + ".\nLet's try again, " + userName);
+        }
+    }
+
+    private static boolean checkAPAnswer() {
+        correctAnswer = ArithmeticProgression.getAnswer();
+        return userAnswer.equals(correctAnswer);
+    }
+
+    private static void printAPQuestion() {
+        System.out.println("Question: " + ArithmeticProgression.getQuestion());
+    }
+
+    private static void printAPGreetings() {
+        System.out.println("What number is missing in the progression?");
     }
 }
