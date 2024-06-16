@@ -22,3 +22,11 @@
 ### win Calculator game
 
 [![asciicast](https://asciinema.org/a/HZmZbvkBDOwNHd5COPhpNKKzd.svg)](https://asciinema.org/a/HZmZbvkBDOwNHd5COPhpNKKzd)
+
+### loose Gcd game
+
+[![asciicast](https://asciinema.org/a/gKcl0DQoTxuXROGzD9fQ8cpDG.svg)](https://asciinema.org/a/gKcl0DQoTxuXROGzD9fQ8cpDG)
+
+### win Gcd game
+
+[![asciicast](https://asciinema.org/a/YUbCrMDtpEyBmjKFC40PWvyWU.svg)](https://asciinema.org/a/YUbCrMDtpEyBmjKFC40PWvyWU)
