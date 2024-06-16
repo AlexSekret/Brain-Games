@@ -6,7 +6,7 @@ public class Gcd {
 
     private static int[] getRandomNumbers() {
         for (int i = 0; i < numbers.length; i++) {
-            numbers[i] = (int) (Math.random() * MAX_RAND_BOUND);
+            numbers[i] = (int) (1 + Math.random() * MAX_RAND_BOUND);
         }
         return numbers;
     }
@@ -20,8 +20,8 @@ public class Gcd {
         return generateQuestion();
     }
 
-    public static int getAnswer() {
-        return generateAnswer();
+    public static String getAnswer() {
+        return String.valueOf(generateAnswer());
     }
 
     private static int generateAnswer() {
