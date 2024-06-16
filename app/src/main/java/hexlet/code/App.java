@@ -1,10 +1,9 @@
 package hexlet.code;
 
-import java.util.Arrays;
-
 //Файл App.java предназначен только для отображения игрового меню, выбора и запуска нужной игры
 public class App {
     public static final int MAX_ROUND_COUNT = 3;
+    private static String firstUserChoice;
 
     public static void main(String[] args) {
         System.out.println("""
@@ -16,12 +15,10 @@ public class App {
                 5 - Progression
                 6 - Prime
                 0 - Exit""");
-
-        Engine.getUserChoice();
-        switch (Engine.userChoice) {
+        firstUserChoice = Engine.returnUserChoice();
+        switch (firstUserChoice) {
             case "1":
                 Engine.startGreeting();
-                System.out.println(Arrays.toString(new String[]{"1", "2"}));
                 break;
             case "2":
                 Engine.playEvenOdd(MAX_ROUND_COUNT);

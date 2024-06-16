@@ -10,17 +10,21 @@ import java.util.Scanner;
 
 public class Engine {
 
-    static Scanner sc = new Scanner(System.in);
+    private static Scanner sc = new Scanner(System.in);
     private static String userName = "";
-    static String userChoice = "";
+    private static String userChoice = "";
     private static String userAnswer;
     private static String correctAnswer;
     private static int correctAnswersCounter;
     private static int wrongAnswersCount = 0;
 
-    public static void getUserChoice() {
+    public static String returnUserChoice() {
+        setUserChoice();
+        return userChoice;
+    }
+
+    private static void setUserChoice() {
         userChoice = sc.next();
-        printUserChoice();
     }
 
     private static void printUserChoice() {
@@ -28,6 +32,7 @@ public class Engine {
     }
 
     public static void startGreeting() {
+        printUserChoice();
         defaultGreet();
         setUserName();
         System.out.println("Hello, " + userName + "!");
@@ -92,7 +97,7 @@ public class Engine {
     }
 
     private static void printWinLoose() {
-        if (correctAnswersCounter == 3) {
+        if (correctAnswersCounter == App.MAX_ROUND_COUNT) {
             System.out.println("Congratulations, " + userName + "!");
         }
     }

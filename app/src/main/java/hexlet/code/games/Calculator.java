@@ -2,6 +2,7 @@ package hexlet.code.games;
 
 public class Calculator {
     private static final String[] OP_LIST = new String[]{"+", "-", "*"};
+    public static final int MAX_OPLIST_LENGTH = 3;
     private static String operator = "";
     private static int[] numbers = {0, 0};
     private static final int MAX_RAND_BOUND = 21;
@@ -36,7 +37,7 @@ public class Calculator {
     }
 
     private static String getRandomOperator() {
-        int rnd = (int) (Math.random() * 3);
+        int rnd = (int) (Math.random() * MAX_OPLIST_LENGTH);
         return OP_LIST[rnd];
     }
 
