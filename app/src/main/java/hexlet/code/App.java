@@ -5,7 +5,6 @@ import java.util.Arrays;
 //Файл App.java предназначен только для отображения игрового меню, выбора и запуска нужной игры
 public class App {
     public static final int MAX_ROUND_COUNT = 3;
-    public static String userName;
 
     public static void main(String[] args) {
         System.out.println("""

@@ -2,6 +2,7 @@ package hexlet.code.games;
 
 public class ArithmeticProgression {
     private static final int MIN_LENGTH = 5;
+    private static final int MAX_NUMBER_BOUNDARY = 9;
     private static int currentLength;
     private static int position;
     private static int[] progression;
@@ -49,7 +50,7 @@ public class ArithmeticProgression {
     }
 
     private static int generateRandomNumber() {
-        return (int) (1 + Math.random() * 9);
+        return (int) (1 + Math.random() * MAX_NUMBER_BOUNDARY);
     }
 
     private static int getProgLength() {
