@@ -30,3 +30,11 @@
 ### win Gcd game
 
 [![asciicast](https://asciinema.org/a/YUbCrMDtpEyBmjKFC40PWvyWU.svg)](https://asciinema.org/a/YUbCrMDtpEyBmjKFC40PWvyWU)
+
+### lose Arithmetic progression game
+
+[![asciicast](https://asciinema.org/a/z27FXcEVcLYEgekSV4U5HMsnV.svg)](https://asciinema.org/a/z27FXcEVcLYEgekSV4U5HMsnV)
+
+### win Arithmetic progression game
+
+[![asciicast](https://asciinema.org/a/KwIzbBkbhQNI3dhQ638aW8inY.svg)](https://asciinema.org/a/KwIzbBkbhQNI3dhQ638aW8inY)
