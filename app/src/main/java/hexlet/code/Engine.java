@@ -68,11 +68,10 @@ public class Engine {
 
     private static void printCalculatorResult() {
         if (checkCalculatorCorrectAnswer()) {
-            System.out.println("Correct!");
+            printCorrect();
             counterCorrectAnswers++;
         } else {
-            System.out.println(userAnswer + " is wrong answer ;(. Correct answer was "
-                    + correctAnswer + ".\nLet's try again, " + userName);
+            printWrong();
         }
 
     }
@@ -90,7 +89,7 @@ public class Engine {
 
     private static void printWinLoose() {
         if (counterCorrectAnswers == 3) {
-            System.out.println("Congratulations, " + userName);
+            System.out.println("Congratulations, " + userName + "!");
         } else {
             System.out.println("Sorry! You loose. Try again.");
         }
@@ -109,11 +108,10 @@ public class Engine {
 
     private static void printEvenOddResult() {
         if (checkEvenOddAnswer()) {
-            System.out.println("Correct!");
+            printCorrect();
             counterCorrectAnswers++;
         } else {
-            System.out.println(userAnswer + " is wrong answer ;(. Correct answer was "
-                    + correctAnswer + ".\nLet's try again, " + userName);
+            printWrong();
         }
     }
 
@@ -139,11 +137,10 @@ public class Engine {
 
     private static void printGcdResult() {
         if (checkGcdAnswer()) {
-            System.out.println("Correct!");
+            printCorrect();
             counterCorrectAnswers++;
         } else {
-            System.out.println(userAnswer + " is wrong answer ;(. Correct answer was "
-                    + correctAnswer + ".\nLet's try again, " + userName);
+            printWrong();
         }
     }
 
@@ -173,11 +170,10 @@ public class Engine {
 
     private static void printAPResult() {
         if (checkAPAnswer()) {
-            System.out.println("Correct!");
+            printCorrect();
             counterCorrectAnswers++;
         } else {
-            System.out.println(userAnswer + " is wrong answer ;(. Correct answer was "
-                    + correctAnswer + ".\nLet's try again, " + userName);
+            printWrong();
         }
     }
 
@@ -215,12 +211,20 @@ public class Engine {
 
     private static void printPrimeResult() {
         if (checkPrimeAnswer()) {
-            System.out.println("Correct!");
+            printCorrect();
             counterCorrectAnswers++;
         } else {
-            System.out.println(userAnswer + " is wrong answer ;(. Correct answer was "
-                    + correctAnswer + ".\nLet's try again, " + userName);
+            printWrong();
         }
+    }
+
+    private static void printCorrect() {
+        System.out.println("Correct!");
+    }
+
+    private static void printWrong() {
+        System.out.println(userAnswer + " is wrong answer ;(. Correct answer was "
+                + correctAnswer + ".\nLet's try again, " + userName + "!");
     }
 
     private static boolean checkPrimeAnswer() {
