@@ -31,13 +31,15 @@ public class Gcd {
     private static int gcd(int a, int b) {
         a = numbers[0];
         b = numbers[1];
-        if (a == 0)
+        if (a == 0) {
             return b;
+        }
         while (b != 0) {
-            if (a > b)
+            if (a > b) {
                 a = a - b;
-            else
+            } else {
                 b = b - a;
+            }
         }
         return a;
     }
