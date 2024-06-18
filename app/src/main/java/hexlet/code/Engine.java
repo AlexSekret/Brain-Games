@@ -50,13 +50,6 @@ public class Engine {
         userName = sc.next();
     }
 
-    private static void printCalculatorGreetings() {
-        System.out.println("What is the result of the expression?");
-    }
-
-    public static void printEvenOddGreetings() {
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-    }
 
     private static void printCalculatorQuestion() {
         System.out.println("Question: " + Calculator.getQuestion());
@@ -166,9 +159,6 @@ public class Engine {
         System.out.println("Question: " + Gcd.getQuestion());
     }
 
-    private static void printGcdGreetings() {
-        System.out.println("Find the greatest common divisor of given numbers.");
-    }
 
     public static void playArithmeticProgression(int roundCount) {
         startGreeting();
@@ -202,9 +192,6 @@ public class Engine {
         System.out.println("Question: " + ArithmeticProgression.getQuestion());
     }
 
-    private static void printAPGreetings() {
-        System.out.println("What number is missing in the progression?");
-    }
 
     public static void playPrime(int roundCount) {
         startGreeting();
@@ -219,9 +206,6 @@ public class Engine {
         printWinLoose();
     }
 
-    private static void printPrimeGreetings() {
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-    }
 
     private static void printPrimeQuestion() {
         System.out.println("Question: " + PrimeNumber.getQuestion());
@@ -249,5 +233,9 @@ public class Engine {
     private static boolean checkPrimeAnswer() {
         correctAnswer = PrimeNumber.getAnswer();
         return userAnswer.equals(correctAnswer);
+    }
+
+    public static void printGameRule(String rule) {
+        System.out.println(rule);
     }
 }

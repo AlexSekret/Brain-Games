@@ -1,8 +1,23 @@
 package hexlet.code.games;
 
+import hexlet.code.App;
+import hexlet.code.Engine;
+
 public class Gcd {
     private static int[] numbers = {0, 0};
     private static final int MAX_RAND_BOUND = 21;
+    private static final String GAME_RULE = "Find the greatest common divisor of given numbers.";
+    private static String[] questions = new String[App.MAX_ROUND_COUNT];
+    private static String[] answers = new String[App.MAX_ROUND_COUNT];
+
+    public static void play() {
+        Engine.printGameRule(GAME_RULE);
+        //генерируем игровые данные
+
+        //и передаем их в `Engine`, здесь должен дергаться класс `Engine`
+
+        System.out.println("Nothing happen here. Method `play` does not implemented yet.");
+    }
 
     private static int[] getRandomNumbers() {
         for (int i = 0; i < numbers.length; i++) {
