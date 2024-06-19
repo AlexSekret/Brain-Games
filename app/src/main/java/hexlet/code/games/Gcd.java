@@ -2,16 +2,17 @@ package hexlet.code.games;
 
 import hexlet.code.App;
 import hexlet.code.Engine;
+import hexlet.code.Util;
 
 public class Gcd {
     private static int[] numbers = {0, 0};
     private static final int MAX_RAND_BOUND = 21;
     private static final String GAME_RULE = "Find the greatest common divisor of given numbers.";
-    private static String[] questions = new String[App.MAX_ROUND_COUNT];
-    private static String[] answers = new String[App.MAX_ROUND_COUNT];
+    private static final String[] questions = new String[App.MAX_ROUND_COUNT];
+    private static final String[] answers = new String[App.MAX_ROUND_COUNT];
 
     public static void play() {
-        Engine.printGameRule(GAME_RULE);
+        Engine.playGame();
         //генерируем игровые данные
 
         //и передаем их в `Engine`, здесь должен дергаться класс `Engine`
@@ -21,7 +22,7 @@ public class Gcd {
 
     private static int[] getRandomNumbers() {
         for (int i = 0; i < numbers.length; i++) {
-            numbers[i] = (int) (1 + Math.random() * MAX_RAND_BOUND);
+            numbers[i] = 1 + Util.getRandomNumber(MAX_RAND_BOUND);
         }
         return numbers;
     }

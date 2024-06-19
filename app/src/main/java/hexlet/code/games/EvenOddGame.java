@@ -1,38 +1,26 @@
 package hexlet.code.games;
 
-import hexlet.code.App;
 import hexlet.code.Engine;
+import hexlet.code.Util;
 
 public class EvenOddGame {
-    private static int number;
-    private static final int MAX_NUMBER_BOUND = 100;
-    private static final String GAME_RULE = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-    private static String[] questions = new String[App.MAX_ROUND_COUNT];
-    private static String[] answers = new String[App.MAX_ROUND_COUNT];
 
-    public static void play() {
-        Engine.printGameRule(GAME_RULE);
+    public static void start(int roundsCount) {
         //генерируем игровые данные
-
+        String GAME_RULE = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+        int MAX_NUMBER_BOUND = 100;
+        String[] questions = new String[roundsCount];
+        String[] answers = new String[roundsCount];
+        for (int i = 0; i < roundsCount; i++) {
+            questions[i] = String.valueOf(Util.getRandomNumber(MAX_NUMBER_BOUND));
+            answers[i] = getCorrectAnswer(questions[i]);
+        }
         //и передаем их в `Engine`, здесь должен дергаться класс `Engine`
-
-        System.out.println("Nothing happen here. Method `play` does not implemented yet.");
+        Engine.playGame(GAME_RULE, questions, answers, roundsCount);
     }
 
-    public static int getQuestion() {
-        generateQuestion();
-        return number;
-    }
-
-    public static String getAnswer() {
-        return generateCorrectAnswer();
-    }
-
-    private static void generateQuestion() {
-        number = (int) (1 + Math.random() * MAX_NUMBER_BOUND);
-    }
-
-    private static String generateCorrectAnswer() {
+    private static String getCorrectAnswer(String question) {
+        int number = Integer.parseInt(question);
         String result = "no";
         if (number % 2 == 0) {
             result = "yes";

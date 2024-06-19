@@ -2,17 +2,18 @@ package hexlet.code.games;
 
 import hexlet.code.App;
 import hexlet.code.Engine;
+import hexlet.code.Util;
 
 public class PrimeNumber {
 
     private static final int MAX_NUMBER_BOUNDARY = 9;
     private static int number;
     private static final String GAME_RULE = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-    private static String[] questions = new String[App.MAX_ROUND_COUNT];
-    private static String[] answers = new String[App.MAX_ROUND_COUNT];
+    private static final String[] questions = new String[App.MAX_ROUND_COUNT];
+    private static final String[] answers = new String[App.MAX_ROUND_COUNT];
 
     public static void play() {
-        Engine.printGameRule(GAME_RULE);
+        Engine.playGame();
         //генерируем игровые данные
 
         //и передаем их в `Engine`, здесь должен дергаться класс `Engine`
@@ -44,6 +45,6 @@ public class PrimeNumber {
     }
 
     private static void generateRandomNumber() {
-        number = (int) (1 + Math.random() * MAX_NUMBER_BOUNDARY);
+        number = 1 + Util.getRandomNumber(MAX_NUMBER_BOUNDARY);
     }
 }

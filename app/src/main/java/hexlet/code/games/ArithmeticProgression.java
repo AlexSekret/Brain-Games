@@ -2,6 +2,7 @@ package hexlet.code.games;
 
 import hexlet.code.App;
 import hexlet.code.Engine;
+import hexlet.code.Util;
 
 public class ArithmeticProgression {
     private static final int MIN_LENGTH = 5;
@@ -10,11 +11,11 @@ public class ArithmeticProgression {
     private static int position;
     private static int[] progression;
     private static final String GAME_RULE = "What number is missing in the progression?";
-    private static String[] questions = new String[App.MAX_ROUND_COUNT];
-    private static String[] answers = new String[App.MAX_ROUND_COUNT];
+    private static final String[] questions = new String[App.MAX_ROUND_COUNT];
+    private static final String[] answers = new String[App.MAX_ROUND_COUNT];
 
-    public static void play() {
-        Engine.printGameRule(GAME_RULE);
+    public static void start() {
+        Engine.playGame();
         //генерируем игровые данные
 
         //и передаем их в `Engine`, здесь должен дергаться класс `Engine`
@@ -23,10 +24,10 @@ public class ArithmeticProgression {
     }
 
     private static int[] generateProgression() {
-        currentLength = getProgLength();
-        int step = generateRandomNumber();
+        currentLength = getRNDProgLength();
+        int step = Util.getRandomNumber(MAX_NUMBER_BOUNDARY);
         progression = new int[currentLength];
-        progression[0] = generateRandomNumber();
+        progression[0] = Util.getRandomNumber(MAX_NUMBER_BOUNDARY);
         for (int i = 1; i < progression.length; i++) {
             progression[i] = progression[i - 1] + step;
         }
@@ -61,15 +62,12 @@ public class ArithmeticProgression {
     }
 
     private static int getRNDPosition() {
-        return (int) (0 + Math.random() * currentLength);
+        return Util.getRandomNumber(currentLength);
     }
 
-    private static int generateRandomNumber() {
-        return (int) (1 + Math.random() * MAX_NUMBER_BOUNDARY);
-    }
 
-    private static int getProgLength() {
-        return (int) (MIN_LENGTH + (Math.random() * MIN_LENGTH));
+    private static int getRNDProgLength() {
+        return MIN_LENGTH + Util.getRandomNumber(MIN_LENGTH);
 
     }
 }

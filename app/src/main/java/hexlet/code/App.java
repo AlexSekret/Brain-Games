@@ -1,9 +1,13 @@
 package hexlet.code;
 
+import hexlet.code.games.EvenOddGame;
+import hexlet.code.games.Greet;
+
+import java.util.Scanner;
+
 //Файл App.java предназначен только для отображения игрового меню, выбора и запуска нужной игры
 public class App {
     public static final int MAX_ROUND_COUNT = 3;
-    private static String firstUserChoice;
 
     public static void main(String[] args) {
         System.out.println("""
@@ -15,25 +19,25 @@ public class App {
                 5 - Progression
                 6 - Prime
                 0 - Exit""");
-        firstUserChoice = Engine.returnUserChoice();
+        String firstUserChoice = new Scanner(System.in).next();
         switch (firstUserChoice) {
             case "1":
-                Engine.startGreeting();
+                Greet.start();
                 break;
             case "2":
-                Engine.playEvenOdd(MAX_ROUND_COUNT);
+                EvenOddGame.start(MAX_ROUND_COUNT);
                 break;
             case "3":
-                Engine.playCalculator(MAX_ROUND_COUNT);
+                Engine.playGame();
                 break;
             case "4":
-                Engine.playGcd(MAX_ROUND_COUNT);
+                Engine.playGame();
                 break;
             case "5":
-                Engine.playArithmeticProgression(MAX_ROUND_COUNT);
+                Engine.playGame();
                 break;
             case "6":
-                Engine.playPrime(MAX_ROUND_COUNT);
+                Engine.playGame();
                 break;
             default:
                 break;
