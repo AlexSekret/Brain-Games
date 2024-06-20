@@ -7,16 +7,16 @@ public class EvenOddGame {
 
     public static void start(int roundsCount) {
         //генерируем игровые данные
-        String GAME_RULE = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-        int MAX_NUMBER_BOUND = 100;
+        String gameRule = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+        int maxNumberBound = 100;
         String[] questions = new String[roundsCount];
         String[] answers = new String[roundsCount];
         for (int i = 0; i < roundsCount; i++) {
-            questions[i] = String.valueOf(Util.getRandomNumber(MAX_NUMBER_BOUND));
+            questions[i] = String.valueOf(Util.getRandomNumber(maxNumberBound));
             answers[i] = getCorrectAnswer(questions[i]);
         }
         //и передаем их в `Engine`, здесь должен дергаться класс `Engine`
-        Engine.playGame(GAME_RULE, questions, answers, roundsCount);
+        Engine.playGame(gameRule, questions, answers, roundsCount);
     }
 
     private static String getCorrectAnswer(String question) {
