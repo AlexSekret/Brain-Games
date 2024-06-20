@@ -1,6 +1,5 @@
 package hexlet.code.games;
 
-import hexlet.code.App;
 import hexlet.code.Engine;
 import hexlet.code.Util;
 
@@ -10,25 +9,18 @@ public class Calculator {
     private static String operator = "";
     private static int[] numbers = {0, 0};
     private static final int MAX_RAND_BOUND = 21;
-    private static final String GAME_RULE = "What is the result of the expression?";
-    private static final String[] questions = new String[App.MAX_ROUND_COUNT];
-    private static final String[] answers = new String[App.MAX_ROUND_COUNT];
 
-    public static void play() {
-        Engine.playGame();
+    public static void start(int roundsCount) {
         //генерируем игровые данные
-
+        String gameRule = "What is the result of the expression?";
+        String[] questions = new String[roundsCount];
+        String[] answers = new String[roundsCount];
+        for (int i = 0; i < roundsCount; i++) {
+            questions[i] = generateQuestion();
+            answers[i] = String.valueOf(generateAnswer());
+        }
         //и передаем их в `Engine`, здесь должен дергаться класс `Engine`
-
-        System.out.println("Nothing happen here. Method `play` does not implemented yet.");
-    }
-
-    public static String getAnswer() {
-        return String.valueOf(generateAnswer());
-    }
-
-    public static String getQuestion() {
-        return generateQuestion();
+        Engine.playGame(gameRule, questions, answers, roundsCount);
     }
 
     private static String generateQuestion() {
@@ -38,7 +30,6 @@ public class Calculator {
     }
 
     private static int generateAnswer() {
-        System.out.println(numbers[0] + " " + operator + " " + numbers[1]);
         switch (operator) {
             case "+":
                 return numbers[0] + numbers[1];
