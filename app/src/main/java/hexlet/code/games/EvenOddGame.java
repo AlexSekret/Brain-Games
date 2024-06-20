@@ -13,13 +13,13 @@ public class EvenOddGame {
         String[] answers = new String[roundsCount];
         for (int i = 0; i < roundsCount; i++) {
             questions[i] = String.valueOf(Util.getRandomNumber(maxNumberBound));
-            answers[i] = getCorrectAnswer(questions[i]);
+            answers[i] = generateAnswer(questions[i]);
         }
         //и передаем их в `Engine`, здесь должен дергаться класс `Engine`
         Engine.playGame(gameRule, questions, answers, roundsCount);
     }
 
-    private static String getCorrectAnswer(String question) {
+    private static String generateAnswer(String question) {
         int number = Integer.parseInt(question);
         String result = "no";
         if (number % 2 == 0) {
