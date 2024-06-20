@@ -4,15 +4,15 @@ import hexlet.code.Engine;
 import hexlet.code.Util;
 
 public class EvenOddGame {
+    public static final int MAX_NUMBER_BOUND = 100;
 
     public static void start(int roundsCount) {
         //генерируем игровые данные
         String gameRule = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-        int maxNumberBound = 100;
         String[] questions = new String[roundsCount];
         String[] answers = new String[roundsCount];
         for (int i = 0; i < roundsCount; i++) {
-            questions[i] = String.valueOf(Util.getRandomNumber(maxNumberBound));
+            questions[i] = String.valueOf(Util.getRandomNumber(MAX_NUMBER_BOUND));
             answers[i] = generateAnswer(questions[i]);
         }
         //и передаем их в `Engine`, здесь должен дергаться класс `Engine`
