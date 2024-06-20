@@ -1,23 +1,23 @@
 package hexlet.code.games;
 
-import hexlet.code.App;
 import hexlet.code.Engine;
 import hexlet.code.Util;
 
 public class Gcd {
     private static int[] numbers = {0, 0};
     private static final int MAX_RAND_BOUND = 21;
-    private static final String GAME_RULE = "Find the greatest common divisor of given numbers.";
-    private static final String[] questions = new String[App.MAX_ROUND_COUNT];
-    private static final String[] answers = new String[App.MAX_ROUND_COUNT];
 
-    public static void play() {
-        Engine.playGame();
+    public static void start(int roundsCount) {
         //генерируем игровые данные
-
+        String gameRule = "Find the greatest common divisor of given numbers.";
+        String[] questions = new String[roundsCount];
+        String[] answers = new String[roundsCount];
         //и передаем их в `Engine`, здесь должен дергаться класс `Engine`
-
-        System.out.println("Nothing happen here. Method `play` does not implemented yet.");
+        for (int i = 0; i < roundsCount; i++) {
+            questions[i] = generateQuestion();
+            answers[i] = generateAnswer();
+        }
+        Engine.playGame(gameRule, questions, answers, roundsCount);
     }
 
     private static int[] getRandomNumbers() {
@@ -32,16 +32,8 @@ public class Gcd {
         return numbers[0] + " " + numbers[1];
     }
 
-    public static String getQuestion() {
-        return generateQuestion();
-    }
-
-    public static String getAnswer() {
-        return String.valueOf(generateAnswer());
-    }
-
-    private static int generateAnswer() {
-        return gcd(numbers[0], numbers[1]);
+    private static String generateAnswer() {
+        return String.valueOf(gcd(numbers[0], numbers[1]));
     }
 
     private static int gcd(int a, int b) {
