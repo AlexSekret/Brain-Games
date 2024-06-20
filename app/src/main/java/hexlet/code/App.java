@@ -1,7 +1,11 @@
 package hexlet.code;
 
+import hexlet.code.games.ArithmeticProgression;
+import hexlet.code.games.Calculator;
 import hexlet.code.games.EvenOddGame;
+import hexlet.code.games.Gcd;
 import hexlet.code.games.Greet;
+import hexlet.code.games.PrimeNumber;
 
 import java.util.Scanner;
 
@@ -28,16 +32,16 @@ public class App {
                 EvenOddGame.start(MAX_ROUND_COUNT);
                 break;
             case "3":
-                Engine.playGame();
+                Calculator.start(MAX_ROUND_COUNT);
                 break;
             case "4":
-                Engine.playGame();
+                Gcd.start(MAX_ROUND_COUNT);
                 break;
             case "5":
-                Engine.playGame();
+                ArithmeticProgression.start(MAX_ROUND_COUNT);
                 break;
             case "6":
-                Engine.playGame();
+                PrimeNumber.start(MAX_ROUND_COUNT);
                 break;
             default:
                 break;
