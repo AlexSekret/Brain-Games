@@ -24,27 +24,16 @@ public class App {
                 6 - Prime
                 0 - Exit""");
         String firstUserChoice = new Scanner(System.in).next();
+        System.out.println("Your choice: " + firstUserChoice);
         switch (firstUserChoice) {
-            case "1":
-                Greet.start();
-                break;
-            case "2":
-                EvenOddGame.start(MAX_ROUND_COUNT);
-                break;
-            case "3":
-                Calculator.start(MAX_ROUND_COUNT);
-                break;
-            case "4":
-                Gcd.start(MAX_ROUND_COUNT);
-                break;
-            case "5":
-                ArithmeticProgression.start(MAX_ROUND_COUNT);
-                break;
-            case "6":
-                PrimeNumber.start(MAX_ROUND_COUNT);
-                break;
-            default:
-                break;
+            case "1" -> Greet.start();
+            case "2" -> EvenOddGame.start(MAX_ROUND_COUNT);
+            case "3" -> Calculator.start(MAX_ROUND_COUNT);
+            case "4" -> Gcd.start(MAX_ROUND_COUNT);
+            case "5" -> ArithmeticProgression.start(MAX_ROUND_COUNT);
+            case "6" -> PrimeNumber.start(MAX_ROUND_COUNT);
+            default -> {
+            }
         }
     }
 
