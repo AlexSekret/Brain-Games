@@ -4,14 +4,14 @@ import java.util.Scanner;
 
 public class Engine {
     public static final int MAX_ROUND_COUNT = 3;
-    private static String userName = "";
+    public static final int QA_COUNT = 2; //questions answers count: String[][QA_COUNT] gameData
 
     public static void playGame(String rule, String[][] gameData) {
         Scanner sc = new Scanner(System.in);
         System.out.println("""
                 Welcome to the Brain Games!
                 May I have your name?""");
-        userName = sc.next();
+        String userName = sc.next();
         System.out.println("Hello, " + userName + "!");
         System.out.println(rule); // печатаем правило rule
 

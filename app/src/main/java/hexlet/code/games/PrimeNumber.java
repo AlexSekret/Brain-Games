@@ -7,16 +7,15 @@ public class PrimeNumber {
 
     private static final int MAX_NUMBER_BOUNDARY = 9;
     private static int number;
-    private static final int QA_Count = 2;
 
     public static void start() {
         //генерируем игровые данные
-        String[][] gameData = new String[Engine.MAX_ROUND_COUNT][QA_Count];
+        String[][] gameData = new String[Engine.MAX_ROUND_COUNT][Engine.QA_COUNT];
         String gameRule = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
         for (String[] gd : gameData) {
             gd[0] = generateQuestion();
-            gd[1] = generateAnswer();
+            gd[1] = getCorrectAnswer();
         }
         //и передаем их в `Engine`, здесь должен дергаться класс `Engine`
         Engine.playGame(gameRule, gameData);
@@ -27,7 +26,7 @@ public class PrimeNumber {
         return String.valueOf(number);
     }
 
-    public static String generateAnswer() {
+    public static String getCorrectAnswer() {
         return isPrime(number) ? "yes" : "no";
     }
 

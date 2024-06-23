@@ -10,12 +10,11 @@ public class ArithmeticProgression {
     private static int currentLength;
     private static int position;
     private static int[] progression;
-    private static final int QA_Count = 2;
 
     public static void start() {
         //генерируем игровые данные
         String gameRule = "What number is missing in the progression?";
-        String[][] gameData = new String[Engine.MAX_ROUND_COUNT][QA_Count]; //{{a,b},{c,d},{e,f}} M*N, M=3, N=2
+        String[][] gameData = new String[Engine.MAX_ROUND_COUNT][Engine.QA_COUNT]; //{{a,b},{c,d},{e,f}} M*N, M=3, N=2
 
         for (String[] gd : gameData) {
             gd[0] = generateQuestion();
