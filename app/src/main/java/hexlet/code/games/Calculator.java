@@ -9,18 +9,18 @@ public class Calculator {
     private static String operator = "";
     private static int[] numbers = {0, 0};
     private static final int MAX_RAND_BOUND = 21;
+    private static final int QA_Count = 2;
 
     public static void start() {
         //генерируем игровые данные
         String gameRule = "What is the result of the expression?";
-        String[] questions = new String[Engine.MAX_ROUND_COUNT];
-        String[] answers = new String[Engine.MAX_ROUND_COUNT];
-        for (int i = 0; i < Engine.MAX_ROUND_COUNT; i++) {
-            questions[i] = generateQuestion();
-            answers[i] = String.valueOf(generateAnswer());
+        String[][] gameData = new String[Engine.MAX_ROUND_COUNT][QA_Count];
+        for (String[] gd : gameData) {
+            gd[0] = generateQuestion();
+            gd[1] = String.valueOf(generateAnswer());
         }
         //и передаем их в `Engine`, здесь должен дергаться класс `Engine`
-        Engine.playGame(gameRule, questions, answers);
+        Engine.playGame(gameRule, gameData);
     }
 
     private static String generateQuestion() {
