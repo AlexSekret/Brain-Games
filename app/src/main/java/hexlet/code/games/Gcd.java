@@ -14,16 +14,12 @@ public class Gcd {
 
         //и передаем их в `Engine`, здесь должен дергаться класс `Engine`
         for (String[] gd : gameData) {
-            numbers[0] = getRandomNumber();
-            numbers[1] = getRandomNumber();
+            numbers[0] = (1 + Util.getRandomNumber(MAX_RAND_BOUND));
+            numbers[1] = (1 + Util.getRandomNumber(MAX_RAND_BOUND));
             gd[0] = numbers[0] + " " + numbers[1];
             gd[1] = String.valueOf(gcd(numbers[0], numbers[1]));
         }
         Engine.playGame(gameRule, gameData);
-    }
-
-    private static int getRandomNumber() {
-        return (1 + Util.getRandomNumber(MAX_RAND_BOUND));
     }
 
     private static int gcd(int a, int b) {
