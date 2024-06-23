@@ -4,7 +4,6 @@ import hexlet.code.games.ArithmeticProgression;
 import hexlet.code.games.Calculator;
 import hexlet.code.games.EvenOddGame;
 import hexlet.code.games.Gcd;
-import hexlet.code.games.Greet;
 import hexlet.code.games.PrimeNumber;
 
 import java.util.Scanner;
@@ -24,7 +23,7 @@ public class App {
         String firstUserChoice = new Scanner(System.in).next();
         System.out.println("Your choice: " + firstUserChoice);
         switch (firstUserChoice) {
-            case "1" -> Greet.start();
+            case "1" -> Cli.start();
             case "2" -> EvenOddGame.start();
             case "3" -> Calculator.start();
             case "4" -> Gcd.start();
