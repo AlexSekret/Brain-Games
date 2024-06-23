@@ -11,17 +11,17 @@ public class ArithmeticProgression {
     private static int position;
     private static int[] progression;
 
-    public static void start(int roundsCount) {
+    public static void start() {
         //генерируем игровые данные
         String gameRule = "What number is missing in the progression?";
 
-        String[] questions = new String[roundsCount];
-        String[] answers = new String[roundsCount];
-        for (int i = 0; i < roundsCount; i++) {
+        String[] questions = new String[Engine.MAX_ROUND_COUNT];
+        String[] answers = new String[Engine.MAX_ROUND_COUNT];
+        for (int i = 0; i < Engine.MAX_ROUND_COUNT; i++) {
             questions[i] = generateQuestion();
             answers[i] = String.valueOf(progression[position]);
         }
-        Engine.playGame(gameRule, questions, answers, roundsCount);
+        Engine.playGame(gameRule, questions, answers);
 
     }
 

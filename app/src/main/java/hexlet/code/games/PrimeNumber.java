@@ -9,18 +9,18 @@ public class PrimeNumber {
     private static int number;
 
 
-    public static void start(int roundsCount) {
+    public static void start() {
         //генерируем игровые данные
-        String[] questions = new String[roundsCount];
-        String[] answers = new String[roundsCount];
+        String[] questions = new String[Engine.MAX_ROUND_COUNT];
+        String[] answers = new String[Engine.MAX_ROUND_COUNT];
         String gameRule = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
-        for (int i = 0; i < roundsCount; i++) {
+        for (int i = 0; i < Engine.MAX_ROUND_COUNT; i++) {
             questions[i] = generateQuestion();
             answers[i] = generateAnswer();
         }
         //и передаем их в `Engine`, здесь должен дергаться класс `Engine`
-        Engine.playGame(gameRule, questions, answers, roundsCount);
+        Engine.playGame(gameRule, questions, answers);
     }
 
     public static String generateQuestion() {

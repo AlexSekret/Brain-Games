@@ -10,17 +10,17 @@ public class Calculator {
     private static int[] numbers = {0, 0};
     private static final int MAX_RAND_BOUND = 21;
 
-    public static void start(int roundsCount) {
+    public static void start() {
         //генерируем игровые данные
         String gameRule = "What is the result of the expression?";
-        String[] questions = new String[roundsCount];
-        String[] answers = new String[roundsCount];
-        for (int i = 0; i < roundsCount; i++) {
+        String[] questions = new String[Engine.MAX_ROUND_COUNT];
+        String[] answers = new String[Engine.MAX_ROUND_COUNT];
+        for (int i = 0; i < Engine.MAX_ROUND_COUNT; i++) {
             questions[i] = generateQuestion();
             answers[i] = String.valueOf(generateAnswer());
         }
         //и передаем их в `Engine`, здесь должен дергаться класс `Engine`
-        Engine.playGame(gameRule, questions, answers, roundsCount);
+        Engine.playGame(gameRule, questions, answers);
     }
 
     private static String generateQuestion() {
@@ -31,14 +31,18 @@ public class Calculator {
 
     private static int generateAnswer() {
         switch (operator) {
-            case "+":
+            case "+" -> {
                 return numbers[0] + numbers[1];
-            case "-":
+            }
+            case "-" -> {
                 return numbers[0] - numbers[1];
-            case "*":
+            }
+            case "*" -> {
                 return numbers[0] * numbers[1];
-            default:
+            }
+            default -> {
                 return 0;
+            }
         }
     }
 
