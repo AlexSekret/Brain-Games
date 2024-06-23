@@ -14,19 +14,15 @@ public class ArithmeticProgression {
         String[][] gameData = new String[Engine.MAX_ROUND_COUNT][Engine.QA_COUNT]; //{{a,b},{c,d},{e,f}} M*N, M=3, N=2
         //gd[0] - store questions, gd[1] - store answers
         for (String[] gd : gameData) {
-            int currentLength = MIN_LENGTH + Util.getRandomNumber(MIN_LENGTH); //длина прогрессии от 5 до 10
-            int position = Util.getRandomNumber(currentLength);
+            int progressionLength = MIN_LENGTH + Util.getRandomNumber(MIN_LENGTH); //длина прогрессии от 5 до 10
+            int position = Util.getRandomNumber(progressionLength);
             int step = 1 + Util.getRandomNumber(MAX_STEP_RANGE);
-            int[] progression = generateProgression(step, currentLength);
+            int[] progression = generateProgression(step, progressionLength);
             gd[0] = generateQuestion(progression, position);
-            gd[1] = getCorrectAnswer(progression[position]);
+            gd[1] = String.valueOf(progression[position]);
         }
         Engine.playGame(gameRule, gameData);
 
-    }
-
-    private static String getCorrectAnswer(int progression) {
-        return String.valueOf(progression);
     }
 
     private static String generateQuestion(int[] progression, int position) {
@@ -41,8 +37,8 @@ public class ArithmeticProgression {
         return question.toString();
     }
 
-    private static int[] generateProgression(int step, int currentLength) {
-        int[] progression = new int[currentLength];
+    private static int[] generateProgression(int step, int progressionLength) {
+        int[] progression = new int[progressionLength];
         progression[0] = Util.getRandomNumber(NUMBER_RANGE);
         for (int i = 1; i < progression.length; i++) {
             progression[i] = progression[i - 1] + step;
