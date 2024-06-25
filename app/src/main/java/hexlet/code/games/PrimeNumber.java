@@ -8,7 +8,6 @@ public class PrimeNumber {
     private static final int MAX_NUMBER_BOUNDARY = 9;
 
     public static void start() {
-        //генерируем игровые данные
         String[][] gameData = new String[Engine.MAX_ROUND_COUNT][Engine.QA_COUNT];
         String gameRule = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         for (String[] gd : gameData) {
@@ -16,7 +15,6 @@ public class PrimeNumber {
             gd[0] = String.valueOf(number);
             gd[1] = isPrime(number) ? "yes" : "no";
         }
-        //и передаем их в `Engine`, здесь должен дергаться класс `Engine`
         Engine.playGame(gameRule, gameData);
     }
 

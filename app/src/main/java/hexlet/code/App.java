@@ -8,7 +8,6 @@ import hexlet.code.games.PrimeNumber;
 
 import java.util.Scanner;
 
-//Файл App.java предназначен только для отображения игрового меню, выбора и запуска нужной игры
 public class App {
     public static void main(String[] args) {
         System.out.println("""
@@ -22,6 +21,7 @@ public class App {
                 0 - Exit""");
         String firstUserChoice = new Scanner(System.in).next();
         System.out.println("Your choice: " + firstUserChoice);
+
         switch (firstUserChoice) {
             case "1" -> Cli.start();
             case "2" -> EvenOddGame.start();

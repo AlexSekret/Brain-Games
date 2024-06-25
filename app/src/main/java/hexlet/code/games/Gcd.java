@@ -7,12 +7,10 @@ public class Gcd {
     private static final int MAX_RAND_BOUND = 21;
 
     public static void start() {
-        //генерируем игровые данные
         int[] numbers = {0, 0};
         String gameRule = "Find the greatest common divisor of given numbers.";
         String[][] gameData = new String[Engine.MAX_ROUND_COUNT][Engine.QA_COUNT];
 
-        //и передаем их в `Engine`, здесь должен дергаться класс `Engine`
         for (String[] gd : gameData) {
             numbers[0] = (1 + Util.getRandomNumber(MAX_RAND_BOUND));
             numbers[1] = (1 + Util.getRandomNumber(MAX_RAND_BOUND));

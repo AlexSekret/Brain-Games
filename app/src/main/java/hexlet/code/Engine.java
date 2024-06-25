@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Engine {
     public static final int MAX_ROUND_COUNT = 3;
-    public static final int QA_COUNT = 2; //questions answers count: String[][QA_COUNT] gameData
+    public static final int QA_COUNT = 2;
 
     public static void playGame(String rule, String[][] gameData) {
         Scanner sc = new Scanner(System.in);
@@ -13,9 +13,9 @@ public class Engine {
                 May I have your name?""");
         String userName = sc.next();
         System.out.println("Hello, " + userName + "!");
-        System.out.println(rule); // печатаем правило rule
+        System.out.println(rule);
 
-        for (int i = 0; i < MAX_ROUND_COUNT; i++) {      //игровой цикл
+        for (int i = 0; i < MAX_ROUND_COUNT; i++) {
             System.out.println("Question: " + gameData[i][0]);
             String userAnswer = sc.next();
             System.out.println("Your answer: " + userAnswer);
