@@ -4,7 +4,7 @@ plugins {
     id("se.patrikerdes.use-latest-versions") version "0.2.18"
     id("com.github.ben-manes.versions") version "0.51.0"
     //setup entry point in our App
-    application
+    id("application")
     //use the Checkstyle plugin
     checkstyle
 }
@@ -19,7 +19,6 @@ repositories {
 application {
     mainClass = "hexlet.code.App"
 }
-
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.11.0-M2"))
     testImplementation("org.junit.jupiter:junit-jupiter:5.11.0-M2")
