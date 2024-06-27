@@ -19,6 +19,8 @@ Games:
   [![asciicast](https://asciinema.org/a/mvmiyXBQEReohkL7atgiMmhqJ.svg)](https://asciinema.org/a/mvmiyXBQEReohkL7atgiMmhqJ)
 - Definition of a prime number.
   [![asciicast](https://asciinema.org/a/6sItCsKLk6WJ0NFeOisVCcvWI.svg)](https://asciinema.org/a/6sItCsKLk6WJ0NFeOisVCcvWI)
+- This is what happens if you enter the wrong answer:
+  [![asciicast](https://asciinema.org/a/YZhcL2Bt1Lx8z1QWczJuKgc0O.svg)](https://asciinema.org/a/YZhcL2Bt1Lx8z1QWczJuKgc0O)
 
 ### Build
 ```shell
