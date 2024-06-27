@@ -18,12 +18,12 @@ Games:
 
 ### Build
 
-```zsh
+```shell
 ./gradlew installDist
 ```
 
 ### Run
 
-```zch
+```shell
 make run-dist
 ```
